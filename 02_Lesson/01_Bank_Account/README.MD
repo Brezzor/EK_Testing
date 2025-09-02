@@ -1,7 +1,8 @@
 # Bank Account Interest
 
-**Positives:**
+**Partitions:**
 
-- 0 - 10000 = 0.5 per cent
-- 10000 > to 20000 per cent
-- 2000 > to infinity per cent
+- _0 = 0.5 per cent_
+- _0.01 > x <= 10000 = 0.5 per cent_
+- _10000.01 > x <= 20000 per cent_
+- _20000.01 > x <= infinity per cent_
