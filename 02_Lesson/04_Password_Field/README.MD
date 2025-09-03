@@ -13,14 +13,38 @@
     </tr>
     <tr>
         <td>Invalid</td>
-        <td>0 - 4</td>
-        <td>2</td>
+        <td>0</td>
+        <td>""</td>
         <td>Error</td>
-        <td>4</td>
-        <td>2 , 3 , 4</td>
+        <td>0</td>
+        <td>""</td>
+    </tr>
+    <tr>
+        <td>Invalid</td>
+        <td>1 - 4</td>
+        <td>"Pa"</td>
+        <td>Error</td>
+        <td>1, 4</td>
+        <td>"", "P", "Pa", "Pas", "Pass", "Passw"</td>
+    </tr>
+    <tr>
+        <td>Valid</td>
+        <td>5 - 10</td>
+        <td>"Password"</td>
+        <td>No error</td>
+        <td>5, 10</td>
+        <td>"Pass", "Passw", "Passwo", "Password1", "Password12", "Password123"</td>
+    </tr>
+    <tr>
+        <td>InValid</td>
+        <td>11 - MAX LENGTH</td>
+        <td>"Password1234567890"</td>
+        <td>Error</td>
+        <td>11</td>
+        <td>"Password12", "Password123", "Password1234"</td>
     </tr>
 </table>
 
 **3. List of test cases:**
 
-`-15` `-2` `-1` `0` `1` `2` `3` `4` `5` `6` `47` `98` `99` `100` `101` `167`
+`""` `"P"` `"Pa"` `"Pass"` `"Passw"` `"Passwo"` `"Password"` `"Password1"` `"Password12"` `"Password123"` `"Password1234"` `"Password1234567890"`
