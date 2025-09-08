@@ -15,7 +15,7 @@
         <td>Invalid</td>
         <td>0</td>
         <td>""</td>
-        <td>Error</td>
+        <td>False</td>
         <td>0, 1</td>
         <td>"", " ", "P"</td>
     </tr>
@@ -23,7 +23,7 @@
         <td>Invalid</td>
         <td>1 - 4</td>
         <td>"Pa"</td>
-        <td>Error</td>
+        <td>False</td>
         <td>1, 4</td>
         <td>"", "P", "Pa", "Pas", "Pass", "Passw"</td>
     </tr>
@@ -31,7 +31,7 @@
         <td>Valid</td>
         <td>5 - 10</td>
         <td>"Password"</td>
-        <td>No error</td>
+        <td>True</td>
         <td>5, 10</td>
         <td>"Pass", "Passw", "Passwo", "Password1", "Password12", "Password123"</td>
     </tr>
@@ -39,7 +39,7 @@
         <td>InValid</td>
         <td>11 - MAX LENGTH</td>
         <td>"Password1234567890"</td>
-        <td>Error</td>
+        <td>False</td>
         <td>11</td>
         <td>"Password12", "Password123", "Password1234"</td>
     </tr>
