@@ -1,20 +1,20 @@
-﻿namespace PasswordCheckerService;
+﻿using System.Text.RegularExpressions;
+
+namespace PasswordCheckerService;
 
 public class PasswordChecker
 {
-    public void CheckPassword(string password)
+    public bool CheckPassword(string password)
     {
-        if (string.IsNullOrEmpty(password))
+        Regex validateRegex = new Regex("^(?=.*?[A-z]).{5,10}$");
+
+        try
         {
-            throw new ArgumentException("Password cannot be null or empty.");
+            return validateRegex.Match(password).Success;
         }
-        else if (password.Length < 5)
+        catch (Exception)
         {
-            throw new ArgumentException("Password must be at least 5 characters long.");
-        }
-        else if (password.Length > 10)
-        {
-            throw new ArgumentException("Password cannot be more than 10 characters long.");
+            return false;
         }
     }
 }

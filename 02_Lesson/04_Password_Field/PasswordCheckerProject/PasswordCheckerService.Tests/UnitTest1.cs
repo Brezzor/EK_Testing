@@ -12,6 +12,7 @@ public class PasswordCheckerServiceTests
     }
 
     [TestCase("")]
+    [TestCase(" ")]
     [TestCase("P")]
     [TestCase("Pa")]
     [TestCase("Pas")]
@@ -21,7 +22,7 @@ public class PasswordCheckerServiceTests
     [TestCase("Password1234567890")]
     public void Negative_Test(string password)
     {
-        Assert.Throws<ArgumentException>(() => _service.CheckPassword(password));
+        Assert.That(_service.CheckPassword(password), Is.False);
     }
 
     [TestCase("Passw")]
@@ -31,6 +32,6 @@ public class PasswordCheckerServiceTests
     [TestCase("Password12")]
     public void Positive_Test(string password)
     {
-        Assert.DoesNotThrow(() => _service.CheckPassword(password));
+        Assert.That(_service.CheckPassword(password), Is.True);
     }
 }
