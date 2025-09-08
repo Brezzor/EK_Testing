@@ -16,8 +16,8 @@
         <td>0</td>
         <td>""</td>
         <td>Error</td>
-        <td>0</td>
-        <td>""</td>
+        <td>0, 1</td>
+        <td>"", "P"</td>
     </tr>
     <tr>
         <td>Invalid</td>
