@@ -30,10 +30,6 @@ public class Tests
         var actualCustomer = customerService.GetCustomer(customerId);
 
         // Assert
-        Assert.That(actualCustomer, Is.Not.Null);
-        Assert.That(expectedCustomer.Id, Is.EqualTo(actualCustomer.Id));
-        Assert.That(expectedCustomer.Name, Is.EqualTo(actualCustomer.Name));
-        Assert.That(expectedCustomer.Email, Is.EqualTo(actualCustomer.Email));
-        Assert.That(expectedCustomer.PhoneNumber, Is.EqualTo(actualCustomer.PhoneNumber));
+        Assert.That(actualCustomer, Is.EqualTo(expectedCustomer));
     }
 }
