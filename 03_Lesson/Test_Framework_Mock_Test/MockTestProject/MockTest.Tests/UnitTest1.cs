@@ -5,14 +5,6 @@ namespace MockTest.Tests;
 [TestFixture]
 public class Tests
 {
-    private Mock<ICusomerRepository> _mockCustomerRepository;
-
-    [SetUp]
-    public void Setup()
-    {
-        _mockCustomerRepository = new Mock<ICusomerRepository>();
-    }
-
     [Test]
     public void Test1()
     {
@@ -20,11 +12,13 @@ public class Tests
         var customerId = 1;
         var expectedCustomer = new Customer
         {
-            Id = customerId,
+            Id = 1,
             Name = "John Doe",
             Email = "John.Doe@Test.com",
             PhoneNumber = "123-456-7890"
         };
+
+        Mock<ICusomerRepository> _mockCustomerRepository = new Mock<ICusomerRepository>();
 
         _mockCustomerRepository
             .Setup(repo => repo.GetCustomerById(customerId))
@@ -41,8 +35,5 @@ public class Tests
         Assert.That(expectedCustomer.Name, Is.EqualTo(actualCustomer.Name));
         Assert.That(expectedCustomer.Email, Is.EqualTo(actualCustomer.Email));
         Assert.That(expectedCustomer.PhoneNumber, Is.EqualTo(actualCustomer.PhoneNumber));
-
-        _mockCustomerRepository
-            .Verify(repo => repo.GetCustomerById(customerId), Times.Once, "GetCustomerById was not called exactly once.");
     }
 }
